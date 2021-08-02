@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Book } from '../book.model';
-import * as fromAppStore from '../../store/app.reducer'
+import * as fromAppStore from '../../store/app.reducer';
+import * as fromBooksAction from '../store/book.actions';
 import { Store } from '@ngrx/store';
 import { map } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
@@ -20,6 +21,8 @@ export class BookListComponent implements OnInit, OnDestroy {
   constructor(private store: Store<fromAppStore.AppState>) { }
 
   ngOnInit(): void {
+
+    this.store.dispatch(new fromBooksAction.FetchBooks())
    this.booksSub = this.store.select("books").pipe(map(booksState => {
       return booksState.books;
     })).subscribe(

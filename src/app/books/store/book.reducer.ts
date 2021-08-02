@@ -20,7 +20,8 @@ export function bookReducer(state: State = initialState, action: fromBookAction.
         case fromBookAction.SET_BOOKS:
 
         return {
-            ...state
+            ...state,
+            books: [...action.payload]
         }
         default:
            return state;

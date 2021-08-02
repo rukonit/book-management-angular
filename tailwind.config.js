@@ -14,8 +14,13 @@ module.exports = {
       },
     },
     variants: {
-      padding: ['hover'], 
-      extend: {},
+      
+      
+      extend: {
+        padding: ['hover'], 
+      border: ['hover'],
+      ring: ['hover']
+      },
     },
     plugins: [require('@tailwindcss/forms'),require('@tailwindcss/typography')],
 };

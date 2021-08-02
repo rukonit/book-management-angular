@@ -7,6 +7,9 @@ import { BookListComponent } from './books/book-list/book-list.component';
 import { BookItemComponent } from './books/book-list/book-item/book-item.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/app.reducer';
+import { HttpClientModule} from '@angular/common/http'
+import { EffectsModule } from '@ngrx/effects';
+import { BookEffects } from './books/store/book.effects';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { reducers } from './store/app.reducer';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(reducers)
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([BookEffects]),
+    HttpClientModule
 
   ],
   providers: [],

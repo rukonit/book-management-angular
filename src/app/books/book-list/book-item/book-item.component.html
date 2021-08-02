@@ -2,10 +2,10 @@
 <div class="lg:px-80">
 <div class="grid grid-cols-3 bg-gray-100  rounded-md border-2 border-pink-200 font-Karla">
     <div  class="">
-        <img class="rounded-l-lg" src={{book.coverPhotoURL}} alt={{book.coverPhotoURL}}>
+        <img class="rounded-l-lg " src={{book.coverPhotoURL}} alt={{book.coverPhotoURL}}>
     </div>
     <div class="pl-2 border-r-2">
-    <p class="">Title: {{book.title}}<p>
+    <p class="hover:bg-yellow-200 hover border-red-500 focus:border-red-600">Title: {{book.title}}<p>
     <p>Author: {{book.author}}</p>
     
     <p>ISBN: {{book.isbnNumber}}</p>
@@ -13,8 +13,10 @@
     <p>Language: {{book.language}}</p>
 </div>
 <div class="text-center flex flex-row justify-center items-center">
-    <a class="inline  py-2 px-2 hover:border-2 hover:border-red-500" href=""><img class="h-8 w-8 pr-2  hover:border-green-200 ring-offset-2" src="assets/img/edit.svg" alt=""></a>
-    <a class="inline" href=""><img class="h-6 w-6" src="assets/img/delete.svg" alt=""></a>
+    <a class="inline  m-3 py-2 px-2 ring-2 ring-red-700 rounded-lg" href=""><img class="h-8 w-8 pr-2 ring-offset-2" src="assets/img/edit.svg" alt=""></a>
+    <a class="inline m-3 py-2 px-2  ring-2  ring-red-700 rounded-lg" href=""><img class="h-8 w-8 pr-2 ring-offset-2" src="assets/img/delete.svg" alt=""></a>
+
+
 
 </div>
    
