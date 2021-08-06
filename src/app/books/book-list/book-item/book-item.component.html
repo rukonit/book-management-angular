@@ -1,30 +1,21 @@
-<!-- <div class="flex-row">
-    <p class="inline">1</p>
-    <p class="inline">2</p>
-</div> -->
-<div class="mb-6 h-44 lg:w-max-96 inline" >
-<div class="grid grid-cols-3 bg-gray-100  rounded-md border-2 border-pink-200 font-Karla hover:border-red-500 h-full lg:max-w-screen-sm">
-    <div  class="relative h-full w-full bg-yellow-200 lg:inline">
-        <img class="absolute h-full rounded-md " src={{book.coverPhotoURL}} alt={{book.coverPhotoURL}}>
-    </div>
-    <div class="pl-2">
-    <p class="hover:bg-yellow-200 hover border-red-500 focus:border-red-600 font-bold">Title: {{book.title}}<p>
-    <p>Author: {{book.author}}</p>
+<div class="p-4">
+<div class="rounded overflow-hidden shadow-lg bg-white transition hover:skew-x-1 hover:cursor-pointer hover:bg-yellow-400 duration-500 ">
     
-    <p>ISBN: {{book.isbnNumber}}</p>
-    <p>Price: ${{book.price}}</p>
-    <p>Language: {{book.language}}</p>
+    <img class="h-36 object-cover" src={{book.coverPhotoURL}} alt={{book.coverPhotoURL}}>
+    <div class="px-6 py-4">
+    <div class="font-bold text-xl inline-block">{{book.title}}</div>
+    <p class="text-gray-700 font-bold text-sm">
+            Author: {{book.author}}
+    </p>
+ </div>
+
+
 </div>
-<div class="text-center flex flex-row justify-center items-center">
-    <a class="inline  m-3 py-2 px-2 hover:ring-2 ring-yellow-200 rounded-lg hover:-translate-y-1.5" href=""><img class="h-8 w-8 pr-2 ring-offset-2" src="assets/img/edit.svg" alt=""></a>
-    <a class="inline  m-3 py-2 px-2 hover:ring-2 ring-yellow-200 rounded-lg hover:-translate-y-1.5" href=""><img class="h-8 w-8 pr-2 ring-offset-2" src="assets/img/delete.svg" alt=""></a>
-
-
 
 </div>
+
+
    
 
-</div>
-</div>
 
 

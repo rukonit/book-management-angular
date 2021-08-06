@@ -7,7 +7,11 @@ module.exports = {
   },
   variants: {
    
-    extend: {},
+    extend: {
+      colors: {
+        'sky' : '#92EEE6'
+      }
+    },
   },
   plugins: [],
 }

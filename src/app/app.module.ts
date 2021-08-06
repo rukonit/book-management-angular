@@ -10,13 +10,15 @@ import { reducers } from './store/app.reducer';
 import { HttpClientModule} from '@angular/common/http'
 import { EffectsModule } from '@ngrx/effects';
 import { BookEffects } from './books/store/book.effects';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksComponentComponent,
     BookListComponent,
-    BookItemComponent
+    BookItemComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
