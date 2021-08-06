@@ -1,14 +1,25 @@
 # BookManagementAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
+The purpose of this project is to demonstrate the integration of Anuglar 12 and Tailwindcss in order to make beautiful responsive website with mobile first concept. This app connects with the backend server https://github.com/rukonit/book-management-back-end to fetch and save the data ngStore, Effects and Actions for state management.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## How to Use
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Visit [https://blissful-bardeen-9416d4.netlify.app/](https://blissful-bardeen-9416d4.netlify.app/) browse the website.
+
+#Technology Used
+
+1. Angular 12.0.0
+2. Tailwindcss
+3. Typescript
+4. HTML
+5. CSS
+6. Java 1.8+
+7. Spring Framework
 
 ## Build
 
