@@ -1,0 +1,25 @@
+<a class="bg-green-200" routerLink="../">Back</a>
+<div>
+    {{book.title}}
+</div>
+<div>
+    {{book.author}}
+</div>
+<div>
+   <img src={{book.coverPhotoURL}} alt={{book.coverPhotoURL}}> 
+</div>
+<div>
+    {{book.isbnNumber}}
+</div>
+<div>
+    {{book.price}}
+</div>
+<div>
+    {{book.language}}
+</div>
+
+<div>
+    <a class="bg-green-200" (click)="onEdit()">Edit</a>
+    <a>Delete</a>
+</div>
+

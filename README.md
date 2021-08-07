@@ -11,7 +11,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 Visit [https://blissful-bardeen-9416d4.netlify.app/](https://blissful-bardeen-9416d4.netlify.app/) browse the website.
 
-#Technology Used
+# Technology Used
 
 1. Angular 12.0.0
 2. Tailwindcss

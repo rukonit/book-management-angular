@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
 })
 export class BookListComponent implements OnInit, OnDestroy {
 
-  books: Book[];
+  books!: Book[];
 
   booksSub: Subscription;
 
@@ -22,11 +22,13 @@ export class BookListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.store.dispatch(new fromBooksAction.FetchBooks())
+   this.store.dispatch(new fromBooksAction.FetchBooks())
    this.booksSub = this.store.select("books").pipe(map(booksState => {
       return booksState.books;
     })).subscribe(
-      (books: Book[]) => {this.books = books}
+      (books: Book[]) => {
+      
+        this.books = books}
     )
   }
 

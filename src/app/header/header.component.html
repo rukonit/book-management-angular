@@ -2,14 +2,14 @@
     <div class="flex justify-between p-2">
         <div class="flex flex-col sm:flex-row">
         <div class=" text-lg font-bold text-sky mr-4">
-        <a class="" href="">Book Management</a>
+        <a class="" routerLink="books">Book Management</a>
         </div>
         <ul [ngClass]="toggle ? '' : 'hidden'" class="flex flex-col sm:block sm:flex-row" id="menu">
-            <li class="mb-4 mt-4 sm:mb-1 sm:mt-1 sm:inline-block mr-1">
-            <a class="btn-nav  font-semibold text-gray-300 pl-2 pr-2 pt-1 pb-1 border-2 rounded-md border-gray-600 hover:text-yellow-400 hover:border-yellow-200" href="">Book List</a>
+            <li routerLink="books" class="mb-4 mt-4 sm:mb-1 sm:mt-1 sm:inline-block mr-1">
+            <a class="btn-nav  font-semibold text-gray-300 pl-2 pr-2 pt-1 pb-1 border-2 rounded-md border-gray-600 hover:text-yellow-400 hover:border-yellow-200">Book List</a>
         </li>
-        <li class="sm:inline-block">
-            <a class="btn-nav font-semibold text-gray-300 pl-2 pr-2 pt-1 pb-1 border-2 rounded-md border-gray-600 hover:text-yellow-400 hover:border-yellow-200" href="">New Book</a>
+        <li (click)="onNewClick()" class="sm:inline-block">
+            <a class="btn-nav font-semibold text-gray-300 pl-2 pr-2 pt-1 pb-1 border-2 rounded-md border-gray-600 hover:text-yellow-400 hover:border-yellow-200">New Book</a>
         </li>
         </ul>
         </div>
