@@ -47,12 +47,15 @@ export class BookEditComponent implements OnInit {
 
     if(this.editMode) {
 
+      this.store.dispatch(new fromBooksAction.UpdateBook({id: this.id, book:  {...this.bookForm.value, id: this.idInServer}}))
+      
     }
     else {
       
       this.store.dispatch(new fromBooksAction.AddBooks(this.bookForm.value))
-      this.router.navigate([''], {relativeTo: this.route})
-    }
+      }
+
+    this.router.navigate([''], {relativeTo: this.route});
 
   }
 
@@ -76,6 +79,7 @@ export class BookEditComponent implements OnInit {
     })
     ).subscribe(book =>
       {
+        this.book = book;
         
         this.idInServer= book.id;
         title = book.title;

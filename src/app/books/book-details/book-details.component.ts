@@ -41,6 +41,7 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
     ) 
     .subscribe((book: Book) => {
       this.book = book
+       
   
       
     })

@@ -1,13 +1,14 @@
-import { Actions } from "@ngrx/effects";
 import { Action } from "@ngrx/store"
 import { Book } from "../book.model";
 
-export const SET_BOOKS = "[Books] Set Books"
+export const SET_BOOKS = '[Books] Set Books'
 export const FETCH_BOOKS = '[Books] Fetch Books'
 export const ADD_BOOKS = '[Books] Add Books'
 export const ONADD_BOOKS = '[Books] On Add Books'
 export const AFTER_DELETE_BOOK = '[Books] After Delete Books'
-export const DELETE_BOOK = '[Books] DELETE BOOK'
+export const DELETE_BOOK = '[Books] Delete Book'
+export const UPDATE_BOOK = '[Books] Update Book'
+export const AFTER_UPDATE_BOOK = '[Books] After Update Book'
 
 
 
@@ -42,6 +43,18 @@ export class SetBooks implements Action {
     constructor(public payload: number) {}
  }
 
+ export class AfterUpdateBook implements Action {
+    readonly type = AFTER_UPDATE_BOOK;
+
+    constructor(public payload: {id: number, book: Book}) {}
+ }
+
+ export class UpdateBook implements Action {
+   readonly type = UPDATE_BOOK;
+
+   constructor(public payload: {id: number, book: Book}) {}
+}
 
 
-export type BookActions = SetBooks | FetchBooks | AddBooks | AfterDeleteBook;
+
+export type BookActions = SetBooks | FetchBooks | AddBooks | AfterDeleteBook | AfterUpdateBook;

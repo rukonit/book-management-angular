@@ -1,25 +1,29 @@
-<a class="bg-green-200" routerLink="../">Back</a>
-<div>
-    {{book.title}}
-</div>
-<div>
-    {{book.author}}
-</div>
-<div>
-   <img src={{book.coverPhotoURL}} alt={{book.coverPhotoURL}}> 
-</div>
-<div>
-    {{book.isbnNumber}}
-</div>
-<div>
-    {{book.price}}
-</div>
-<div>
-    {{book.language}}
-</div>
+<div class="h-screen flex items-start justify-center md:items-center md:justify-center">
+<div class="p-4 max-w-lg bg-gray-100 drop-shadow-2xl lg:-skew-x-1">
 
-<div>
-    <a class="bg-green-200" (click)="onEdit()">Edit</a>
-    <a (click)="onDelete()">Delete</a>
+<span class="block font-bold uppercase text-xl text-indigo-800">
+ {{book.title}}
+</span>
+<span class="block font-bold text-base text-gray-700">
+    Author: {{book.author}}
+</span>
+
+   <img class="block w-full max-w-xs mt-3 mb-3" src={{book.coverPhotoURL}} alt={{book.coverPhotoURL}}> 
+<span class="block text-base text-gray-700 font-semibold">
+   ISBN Number: {{book.isbnNumber}}
+</span>
+<span class="block text-base text-gray-700 font-semibold">
+   Price: ${{book.price}}.00
+</span>
+<span class="block text-base text-gray-700 font-semibold">
+    {{book.language}}
+</span>
+
+<div class="mt-8">
+    <a class="shadow bg-green-500 hover:bg-green-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mr-2" routerLink="../">Back</a>
+    <a class="shadow bg-blue-500  hover:bg-blue-800 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mr-2" (click)="onEdit()">Edit</a>
+    <a (click)="onDelete()" class="shadow bg-red-500 hover:bg-red-700 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Delete</a>
+</div>
+</div>
 </div>
 

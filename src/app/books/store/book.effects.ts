@@ -60,4 +60,23 @@ export class BookEffects {
     })
     )
 
+    @Effect()
+    updateBook = this.action$.pipe(ofType(fromBookActions.UPDATE_BOOK),
+    switchMap((details: fromBookActions.UpdateBook) => {
+        this.stateBookId = details.payload.id;
+        this.currentBook = details.payload.book;
+
+        console.log(this.currentBook);
+        
+        return this.http.put<Book[]>(environment.baseUrl + "/rest/books", details.payload.book, {headers: {
+            'content-type': 'application/json'
+        }})
+
+    }),
+
+    map((message)=>{
+             
+        return new fromBookActions.AfterUpdateBook({id: this.stateBookId, book: this.currentBook})
+    })
+    )
 }

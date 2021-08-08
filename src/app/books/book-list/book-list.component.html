@@ -1,23 +1,27 @@
 <!-- <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5 flex-1"> -->
 
  
-
+<div class="pl-12 pt-6 border-b"> 
+<span class="font-bold text-gray-700 uppercase">        
+        Latest Books
+</span>
+</div>
 <div class="pl-8 pr-8 pt-2 pb-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
 
-<div [routerLink]="i" *ngFor="let bookItem of books; let i=index;" class="rounded overflow-hidden shadow-lg bg-white transition hover:skew-x-1 hover:cursor-pointer hover:bg-yellow-400 duration-500 m-4">
+        <div [routerLink]="i" *ngFor="let bookItem of books; let i=index;" class="rounded overflow-hidden shadow-lg bg-white transition hover:skew-x-1 hover:cursor-pointer hover:bg-yellow-400 duration-500 m-4">
     
-    <img class="h-36 object-cover" src={{bookItem.coverPhotoURL}} alt={{bookItem.coverPhotoURL}}>
-    <div class="px-2 py-2">
-    <div class="font-bold text-md">{{bookItem.title}}</div>
-    <p class="text-gray-700 font-bold text-sm">
-            Author: {{bookItem.author}}
-    </p>
- </div>
-
+                <img class="h-36 object-cover" src={{bookItem.coverPhotoURL}} alt={{bookItem.coverPhotoURL}}>
+                <div class="px-2 py-2">
+                <div class="font-bold text-md">{{bookItem.title}}</div>
+                <p class="text-gray-700 font-bold text-sm">
+                        Author: {{bookItem.author}}
+                </p>
+             </div>
+            
+            
+            </div>
 
 </div>
-
-</div>
-<div class="text-center bg-gray-100"><span class="bg-indigo-100 p-1 font-medium text-gray-500 border-2 rounded-md border-blue-200 transition hover:border-yellow-300 hover:bg-white ease-out duration-500 cursor-pointer">Load More...</span></div>
+<div class="text-center"><span class="bg-indigo-100 p-1 font-medium text-gray-500 border-2 rounded-md border-blue-200 transition hover:border-yellow-300 hover:bg-white ease-out duration-500 cursor-pointer">Load More...</span></div>
 
 
