@@ -21,13 +21,11 @@ export class BookListComponent implements OnInit, OnDestroy {
   constructor(private store: Store<fromAppStore.AppState>) { }
 
   ngOnInit(): void {
-
-   this.store.dispatch(new fromBooksAction.FetchBooks())
    this.booksSub = this.store.select("books").pipe(map(booksState => {
       return booksState.books;
     })).subscribe(
       (books: Book[]) => {
-      
+        
         this.books = books}
     )
   }

@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { map, switchMap } from 'rxjs/operators';
 import { Book } from '../book.model';
 import * as fromAppStore from '../../store/app.reducer';
@@ -8,6 +8,7 @@ import { Store } from '@ngrx/store';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpParams } from '@angular/common/http';
 import { Subscription } from 'rxjs';
+import { Element } from '@angular/compiler';
 
 @Component({
   selector: 'app-book-edit',
@@ -17,17 +18,22 @@ import { Subscription } from 'rxjs';
 export class BookEditComponent implements OnInit {
   book: Book;
   id: number = null;
+  idInServer = null;
   bookForm: FormGroup;
   editMode:boolean;
   subForm: Subscription;
+  @ViewChild('cImage') image: ElementRef;
+  imgURL: string;
+  
 
-  constructor(private route: ActivatedRoute, private store: Store<fromAppStore.AppState>) { }
+  constructor(private route: ActivatedRoute, private router: Router, private store: Store<fromAppStore.AppState>) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(
+ 
+        this.route.params.subscribe(
       (params: Params) => {
        this.id = params['id'];
-       console.log(this.id);
+
        
        this.editMode = params['id'] != null;
        this.initForm()
@@ -39,12 +45,21 @@ export class BookEditComponent implements OnInit {
 
   onSubmit() {
 
+    if(this.editMode) {
+
+    }
+    else {
+      
+      this.store.dispatch(new fromBooksAction.AddBooks(this.bookForm.value))
+      this.router.navigate([''], {relativeTo: this.route})
+    }
+
   }
 
   initForm() {
     let title = '';
     let author = ''
-    let coverImageURL  = '';
+    let coverImageURL: string;
     let isbnNumber:Number;
     let price: Number;
     let language  = '';
@@ -62,7 +77,7 @@ export class BookEditComponent implements OnInit {
     ).subscribe(book =>
       {
         
-         
+        this.idInServer= book.id;
         title = book.title;
         author = book.author;
         coverImageURL = book.coverPhotoURL;
@@ -81,11 +96,16 @@ export class BookEditComponent implements OnInit {
         'title': new FormControl(title, Validators.required),
         'author': new FormControl(author, Validators.required),
         'coverPhotoURL': new FormControl(coverImageURL, Validators.required),
-        'isbnNumber': new FormControl(isbnNumber),
-        'price': new FormControl(price),
+        'isbnNumber': new FormControl(isbnNumber, Validators.required),
+        'price': new FormControl(price, Validators.required),
         'language': new FormControl(language, Validators.required)
       }
     )
   }
+
+onCancel() {
+  this.router.navigate([''], {relativeTo: this.route})
+}
+
 
 }

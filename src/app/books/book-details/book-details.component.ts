@@ -22,7 +22,8 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
   constructor(private store: Store<fromAppState.AppState>, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-
+ console.log("Details initialized");
+ 
     this.route.params.pipe(map(
       param => {
         return param['id'];
@@ -33,13 +34,14 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
 
         
           return bookState.books.find((book, index)=>{
-            return index == 0;
+            return index == id;
           })
         }))
       })
     ) 
     .subscribe((book: Book) => {
       this.book = book
+  
       
     })
     
@@ -52,5 +54,10 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
   onEdit() {
     this.router.navigate(['books', this.id,'edit'])
   }
+
+  onDelete() {
+    this.store.dispatch(new fromBookActions.DeleteBook({id: this.id, bookId: this.book.id}))
+    this.router.navigate([''], {relativeTo: this.route})
+  } 
 
 }
