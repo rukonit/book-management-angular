@@ -21,8 +21,7 @@ export class BooksResolverService implements Resolve<Book[]> {
             return bookState.books
         }),
         switchMap((books: Book[]   )=> {
-                  console.log(books);
-                  
+                              
             if(books.length === 0) {
                 
                 

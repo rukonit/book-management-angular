@@ -16,6 +16,7 @@ export class BookEffects {
     bookId: number;
     stateBookId: number;
     currentBook: Book;
+    
 
     constructor(private action$: Actions, private http: HttpClient, private store: Store<fromAppState.AppState>) {}
 
@@ -28,12 +29,12 @@ export class BookEffects {
     @Effect()
     fetchBooks = this.action$.pipe(ofType(fromBookActions.FETCH_BOOKS),
     switchMap(()=>{
-      
+    
         return this.http.get<Book[]>(environment.baseUrl + "/rest/books")
         .pipe( 
             map(books => {
-        
-                
+              
+            
             return new fromBookActions.SetBooks(books);
         }),
         catchError(errorRes => {

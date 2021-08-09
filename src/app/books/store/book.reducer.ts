@@ -18,8 +18,7 @@ export function bookReducer(state: State = initialState, action: fromBookAction.
 
     switch(action.type) {
         case fromBookAction.SET_BOOKS:
-         console.log('calling set books');
-         
+      
         return {
             ...state,
             books: [...state.books, ...action.payload],
@@ -34,7 +33,8 @@ export function bookReducer(state: State = initialState, action: fromBookAction.
 
                 return {
                     ...state,
-                    books: [...books]
+                    books: [...books],
+                    isLoading: false
                 };
             
                
@@ -47,7 +47,8 @@ export function bookReducer(state: State = initialState, action: fromBookAction.
             
             return {
                 ...state,
-                books: updatedBooks
+                books: updatedBooks,
+                isLoading: false
             }
 
       

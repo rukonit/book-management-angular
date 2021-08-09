@@ -25,6 +25,7 @@ export class BookEditComponent implements OnInit {
   @ViewChild('cImage') image: ElementRef;
   imgURL: string;
   
+  
 
   constructor(private route: ActivatedRoute, private router: Router, private store: Store<fromAppStore.AppState>) { }
 
