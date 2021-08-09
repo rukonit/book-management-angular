@@ -9,6 +9,7 @@ export const AFTER_DELETE_BOOK = '[Books] After Delete Books'
 export const DELETE_BOOK = '[Books] Delete Book'
 export const UPDATE_BOOK = '[Books] Update Book'
 export const AFTER_UPDATE_BOOK = '[Books] After Update Book'
+export const LOADINING_FAIL = '[Books] Loading Books Fail'
 
 
 
@@ -55,6 +56,11 @@ export class SetBooks implements Action {
    constructor(public payload: {id: number, book: Book}) {}
 }
 
+export class LoadingFail implements Action {
+   readonly type = LOADINING_FAIL;
+   constructor(public payload: any){}
+}
 
 
-export type BookActions = SetBooks | FetchBooks | AddBooks | AfterDeleteBook | AfterUpdateBook;
+
+export type BookActions = SetBooks | FetchBooks | AddBooks | AfterDeleteBook | AfterUpdateBook | LoadingFail;

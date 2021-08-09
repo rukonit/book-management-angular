@@ -17,16 +17,25 @@ export class BookListComponent implements OnInit, OnDestroy {
   books!: Book[];
 
   booksSub: Subscription;
+  isLoading: boolean = true;
+  error: any = null;
+  
 
   constructor(private store: Store<fromAppStore.AppState>) { }
 
   ngOnInit(): void {
+
    this.booksSub = this.store.select("books").pipe(map(booksState => {
-      return booksState.books;
+    this.isLoading = booksState.isLoading;
+    this.error = booksState.error
+    if(this.error) {
+     console.log(this.error);
+    
+    }
+    return booksState.books;
     })).subscribe(
       (books: Book[]) => {
-        
-        this.books = books}
+          this.books = books}
     )
   }
 

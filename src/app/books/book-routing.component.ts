@@ -10,7 +10,7 @@ const routes: Routes = [
     {
         path: '', component: BooksComponentComponent,
         children: [
-            {path: '', component: BookListComponent, resolve:  [BooksResolverService]},
+            {path: '', component: BookListComponent, resolve: [BooksResolverService]},
             {path: 'new', component: BookEditComponent},
             {path: ':id', component: BookDetailsComponent, resolve: [BooksResolverService]},
             {path: ':id/edit', component: BookEditComponent, resolve: [BooksResolverService]}

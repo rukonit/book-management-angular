@@ -3,21 +3,27 @@ import { Book } from "../book.model";
 import * as fromBookAction from './book.actions'
 
 export interface State {
-    books: Book[]
+    books: Book[],
+    isLoading: boolean;
+    error: any;
 }
 
 const initialState: State = {
-    books: []
+    books: [],
+    isLoading: false,
+    error: null
 }
 
 export function bookReducer(state: State = initialState, action: fromBookAction.BookActions) {
 
     switch(action.type) {
         case fromBookAction.SET_BOOKS:
+         console.log('calling set books');
          
         return {
             ...state,
-            books: [...state.books, ...action.payload]
+            books: [...state.books, ...action.payload],
+            isLoading: false
         }
 
          case fromBookAction.AFTER_DELETE_BOOK:
@@ -43,6 +49,19 @@ export function bookReducer(state: State = initialState, action: fromBookAction.
                 ...state,
                 books: updatedBooks
             }
+
+      
+
+        case fromBookAction.LOADINING_FAIL:
+
+           return {
+               ...state,
+               isLoading: false,
+               error: action.payload.message
+               
+               
+           }
+
            
         default:
            return state;
