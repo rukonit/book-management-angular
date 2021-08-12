@@ -56,7 +56,7 @@ export class BookEditComponent implements OnInit {
       this.store.dispatch(new fromBooksAction.AddBooks(this.bookForm.value))
       }
 
-    this.router.navigate([''], {relativeTo: this.route});
+    this.router.navigate(['/books'], {relativeTo: this.route});
 
   }
 
@@ -109,7 +109,7 @@ export class BookEditComponent implements OnInit {
   }
 
 onCancel() {
-  this.router.navigate([''], {relativeTo: this.route})
+  this.router.navigate(['/books'], {relativeTo: this.route})
 }
 
 

@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {StoreRouterConnectingModule} from '@ngrx/router-store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { environment } from 'src/environments/environment';
+import { LandingPageComponent } from './landing-page/landing-page.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { environment } from 'src/environments/environment';
     AppComponent,
    
     HeaderComponent,
+        LandingPageComponent,
    
   ],
   imports: [
