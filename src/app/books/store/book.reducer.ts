@@ -18,10 +18,11 @@ export function bookReducer(state: State = initialState, action: fromBookAction.
 
     switch(action.type) {
         case fromBookAction.SET_BOOKS:
-      
+        console.log([...state.books, ...action.payload]);
+        
         return {
             ...state,
-            books: [...state.books, ...action.payload],
+            books: [...action.payload],
             isLoading: false
         }
 

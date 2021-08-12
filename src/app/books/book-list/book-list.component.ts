@@ -37,7 +37,6 @@ export class BookListComponent implements OnInit, OnDestroy {
     return booksState.books;
     })).subscribe(
       (books: Book[]) => {
-       
           this.books = books}
     )
   }

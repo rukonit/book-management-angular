@@ -24,15 +24,14 @@ export class BooksResolverService implements Resolve<Book[]> {
                               
             if(books.length === 0) {
                 
-                
+       
                 this.store.dispatch(new fromBookActions.FetchBooks())
-            
-                
-                        
+
                 return this.action$.pipe(ofType(fromBookActions.SET_BOOKS), take(1))
             }
             else {
- 
+
+                
                 return of(books)
             }
         })

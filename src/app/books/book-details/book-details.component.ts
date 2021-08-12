@@ -58,7 +58,7 @@ export class BookDetailsComponent implements OnInit, OnDestroy {
 
   onDelete() {
     this.store.dispatch(new fromBookActions.DeleteBook({id: this.id, bookId: this.book.id}))
-    this.router.navigate([''], {relativeTo: this.route})
+    this.router.navigate(['/books'], {relativeTo: this.route})
   } 
 
 }
