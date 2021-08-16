@@ -13,6 +13,7 @@ import {StoreRouterConnectingModule} from '@ngrx/router-store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 import { environment } from 'src/environments/environment';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { MenuToggleDirective } from './header/menu-toggle.directive';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
    
     HeaderComponent,
         LandingPageComponent,
+        MenuToggleDirective,
    
   ],
   imports: [

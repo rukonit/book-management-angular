@@ -1,8 +1,11 @@
+
 <app-header></app-header>
 
-<div *ngIf="loading" class="flex justify-center items-center w-full h-screen">
+<div *ngIf="loading" class="flex justify-center items-center w-full h-screen flex-col gap-3">
+    <div class="p-4 text-center"><span class="font-bold ">Please Wait!! Apps On Heroku Free Backend Takes Some Time to Wake the Application Up</span></div>
     <div class="animate-spin rounded-full h-32 w-32 border-b-2 border-gray-900"></div>
 </div>
+<div class=" ">
 <router-outlet></router-outlet>
-
+</div>
 

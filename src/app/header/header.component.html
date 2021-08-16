@@ -1,22 +1,29 @@
-<nav class=" text-white bg-gray-700 bg-gradient-to-br sm:h-12" id="nav" [ngClass]="toggle ? 'h-32' : ''">
+<nav class="text-white bg-gray-700 bg-gradient-to-br sm:h-12" id="nav" [ngClass]="toggle ? 'h-32' : ''">
     <div class="flex justify-between p-2">
-        <div class="flex flex-col sm:flex-row">
         <div class=" text-lg font-bold text-sky mr-4">
-        <a class="" routerLink="">Book Management</a>
-        </div>
-        <ul [ngClass]="toggle ? '' : 'hidden'" class="flex flex-col sm:block sm:flex-row" id="menu">
-            <li routerLink="books" (click)="toggle = !toggle" class="mb-4 mt-4 sm:mb-1 sm:mt-1 sm:inline-block mr-1">
-            <a class="btn-nav  font-semibold text-gray-300 pl-2 pr-2 pt-1 pb-1 border-2 rounded-md border-gray-600 hover:text-yellow-400 hover:border-yellow-200">Book List</a>
-        </li>
-        <li (click)="onNewClick(); toggle = !toggle;" class="sm:inline-block">
-            <a class="btn-nav font-semibold text-gray-300 pl-2 pr-2 pt-1 pb-1 border-2 rounded-md border-gray-600 hover:text-yellow-400 hover:border-yellow-200">New Book</a>
-        </li>
-        </ul>
-        </div>
+            <a class="" routerLink="">Book Management</a>
+            </div>
+        <div class="flex flex-col justify-end items-end">
         <div class="sm:hidden" id="toggler" (click)="toggle = !toggle">
             <a><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg></a>
         </div>
+        <div class="flex flex-col sm:flex-row">
+        
+        
+            <ul [ngClass]="toggle ? '' : 'hidden'" class="flex flex-col sm:block sm:flex-row justify-end items-end lg:justify-center lg:items-center " id="menu" appMenuToggle>
+                <li routerLink="books" (click)="toggle = !toggle" class="mb-4 mt-4 sm:mb-1 sm:mt-1 sm:inline-block mr-1 sm:border-r sm:border-gray-500">
+                <a class="btn-nav  font-semibold text-gray-300 pl-2 pr-2 pt-1 pb-1  hover:text-yellow-400 hover:cursor-pointer ">Book List</a>
+            </li>
+           
+            <li (click)="onNewClick(); toggle = !toggle;" class="sm:inline-block">
+                <a class="btn-nav font-semibold text-gray-300 pl-2 pr-2 pt-1 pb-1  hover:text-yellow-400 hover:cursor-pointer">New Book</a>
+            </li>
+            </ul>
+            </div>
+        </div>
+        
 </div>
+
    
     
 </nav>
