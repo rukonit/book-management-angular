@@ -4,9 +4,10 @@ import { BooksComponentComponent } from "./books/books-component.component";
 import { LandingPageComponent } from "./landing-page/landing-page.component";
 
 const appRoutes: Routes = [
+   
     {path: '', component: LandingPageComponent},
-    {path: 'books', redirectTo: '/books', pathMatch: 'full'},
-    {path: 'books', loadChildren: ()=> import('./books/books.module').then(m => m.BooksModule)}
+     {path: 'books', loadChildren: ()=> import('./books/books.module').then(m => m.BooksModule)}
+    
 ]
 
 @NgModule({

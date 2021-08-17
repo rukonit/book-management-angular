@@ -8,7 +8,9 @@ module.exports = {
   variants: {
    
     extend: {
+      backgroundColor: ['active', 'hover', 'focus'],
       colors: {
+
         'sky' : '#92EEE6'
       }
     },

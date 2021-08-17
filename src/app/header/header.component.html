@@ -1,4 +1,6 @@
-<nav class="text-white bg-gray-700 bg-gradient-to-br sm:h-12" id="nav" [ngClass]="toggle ? 'h-32' : ''">
+
+<nav class="text-white bg-gray-700 bg-gradient-to-br sm:h-12" id="nav" >
+
     <div class="flex justify-between p-2">
         <div class=" text-lg font-bold text-sky mr-4">
             <a class="" routerLink="">Book Management</a>
@@ -10,17 +12,23 @@
         <div class="flex flex-col sm:flex-row">
         
         
-            <ul [ngClass]="toggle ? '' : 'hidden'" class="flex flex-col sm:block sm:flex-row justify-end items-end lg:justify-center lg:items-center " id="menu" appMenuToggle>
-                <li routerLink="books" (click)="toggle = !toggle" class="mb-4 mt-4 sm:mb-1 sm:mt-1 sm:inline-block mr-1 sm:border-r sm:border-gray-500">
-                <a class="btn-nav  font-semibold text-gray-300 pl-2 pr-2 pt-1 pb-1  hover:text-yellow-400 hover:cursor-pointer ">Book List</a>
+            <ul class="flex flex-col sm:block sm:flex-row justify-end items-end lg:justify-center lg:items-center" [ngClass]="toggle ? '' : 'hidden'"  id="menu">
+                <li (click)="toggle = !toggle" class="btn-nav mb-4 mt-4 sm:mb-1 sm:mt-1 sm:inline-block mr-1 sm:border-r sm:border-gray-500">
+                <a routerLinkActive="active" routerLink="books"  [routerLinkActiveOptions]="{ exact: true }" class="font-semibold text-gray-300 pl-2 pr-2 pt-1 pb-1  hover:text-yellow-400 hover:cursor-pointer">Book List</a>
+            </li>
+            
+            
+          
+            <li (click)="toggle = !toggle;" class="sm:inline-block ">
+                <a routerLinkActive="active" [routerLink]="['books','new']" class="btn-nav font-semibold text-gray-300 pl-2 pr-2 pt-1 pb-1  hover:text-yellow-400 hover:cursor-pointer">New Book</a>
             </li>
            
-            <li (click)="onNewClick(); toggle = !toggle;" class="sm:inline-block">
-                <a class="btn-nav font-semibold text-gray-300 pl-2 pr-2 pt-1 pb-1  hover:text-yellow-400 hover:cursor-pointer">New Book</a>
-            </li>
             </ul>
+
             </div>
         </div>
+
+      
         
 </div>
 

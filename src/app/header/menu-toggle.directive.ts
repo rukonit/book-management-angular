@@ -10,7 +10,7 @@ export class MenuToggleDirective {
   constructor(private elRef: ElementRef, private renderer: Renderer2) { }
 
   @HostListener('click') toggleMenu() {
-    if(this.toggler) {
+    if(!this.toggler) {
     this.renderer.setStyle(this.elRef.nativeElement, 'display', 'hidden');
     this.toggler = !this.toggler;
   }

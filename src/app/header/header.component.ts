@@ -15,8 +15,5 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onNewClick() {
-    this.router.navigate(['books','new'], {relativeTo: this.route})
-  }
 
 }
